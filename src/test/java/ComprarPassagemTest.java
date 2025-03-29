@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver; // Biblioteca principal do Selenium
 import org.openqa.selenium.chrome.ChromeDriver; // Biblioteca do ChromeDriver
 
 // 2- Classe 
-public class PassagemTest {
+public class ComprarPassagemTest {
 
     // 2.1- Atributos
     private WebDriver driver; // Atributo do Selenium WebDriver
