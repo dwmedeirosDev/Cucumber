@@ -10,5 +10,5 @@ Funcionalidade: Comprar Passagem
     Cenario: Comprar com sucesso
         Dado que acesso o site "https://blazedemo.com/"
         Quando seleciono a origem "São Paolo" e destino "Cairo"
-        E clico no botão Find Flights
+        E clico no botao Find Flights
         Entao visualiza a lista de voos
