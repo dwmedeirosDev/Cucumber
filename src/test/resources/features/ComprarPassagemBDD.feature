@@ -22,3 +22,49 @@ Funcionalidade: Comprar Passagem
     | origem        | destino     |
     | "São Paolo"   | "Cairo"     |
     | "Boston"      | "London"    |
+
+
+# Testes
+
+Esquema do Cenario: Login positivo
+    Dado que acesso a pagina de login
+    Quando preencho o <email> e <senha> corretos
+    E clico no botao login
+    Então exibe a mensagem de login com sucesso
+    Exemplos:
+    | email                         | senha                 |
+    | cliente@iterasys.com          | iterasys123           | # 1 teste positivo - V V
+
+Esquema do Cenario: Login negativo
+    Dado que acesso a pagina de login
+    Quando preencho o <email> e <senha> incorretos
+    E clico no botao login
+    Então exibe a mensagem de email ou senha incorretos
+    | email                         | senha                 |
+    | cliente@iterasys.com          | iterasys321           | # 2 testes negativos - V F
+    | clienteinco@iterasys.com      | iterasys123           | # 3 testes negativos - F V
+    | clienteinco@iterasys.com      | iterasys321           | # 2 testes negativos - F F
+
+###
+
+# Testes (Todos)
+
+Esquema do Cenario: Login positivo
+    Dado que acesso a pagina de login
+    Quando preencho o <email> e <senha> corretos
+    E clico no botao login
+    Então exibe a mensagem de login com sucesso
+    Exemplos:
+    | email                         | senha                 |
+    | cliente@iterasys.com          | iterasys123           | # 1 teste positivo - V V
+
+Esquema do Cenario: Login negativo
+    Dado que acesso a pagina de login
+    Quando preencho o <email> e <senha> incorretos
+    E clico no botao login
+    Então exibe a <mensagem>
+    | email                         | senha                 | tipo | mensagem                     |
+    | cliente@iterasys.com          | iterasys123           | P    | #1 Login com sucesso         |
+    | cliente@iterasys.com          | iterasys321           | N    | #2 Email ou senha incorretos |
+    | clienteinco@iterasys.com      | iterasys123           | N    | #3 Email ou senha incorretos |
+    | clienteinco@iterasys.com      | iterasys321           | N    | #4 Email ou senha incorretos |
