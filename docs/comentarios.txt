@@ -15,3 +15,9 @@ Lições aprendidas durante o curso Iterasys (142)
  
  - 1 Teste será composto por 2 arquivos: Arquivo de negócio escrito em Gherkin (.feature) e arquivo
  de automação, que faz referêcia ao .feature (.java)
+
+
+ # códigos para execução:
+ mvn clean test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features="src/test/resources/features"
+
+ mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dexec.argas="src/test/resources/ComprarPassagemBDD.feature --glue stepsPO"
