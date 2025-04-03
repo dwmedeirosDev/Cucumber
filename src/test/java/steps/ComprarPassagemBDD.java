@@ -19,22 +19,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ComprarPassagemBDD {
 
-    WebDriver driver; // Objeto do Selenium WB 
+    WebDriver driver; // Objeto do Selenium WB
     String origem;
     String destino;
 
     @Before
-    public void iniciar(){
+    public void iniciar() {
         WebDriverManager.chromedriver().setup(); // Garantir o driver correto para o Chrome
         driver = new ChromeDriver(); // Instaciar como ChromeDriver
 
         // Definir um tempo de espera implícita de 3 segundos
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000)); 
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
         driver.manage().window().maximize(); // Exibir janela maximizada
     }
 
     @After
-    public void finalizar(){
+    public void finalizar() {
         driver.quit(); // Finalizar objeto do Selenium WB
     }
 
@@ -50,13 +50,13 @@ public class ComprarPassagemBDD {
             this.origem = origem;
             WebElement combo = driver.findElement(By.name("fromPort"));
             combo.click();
-            combo.findElement(By.xpath("//option[.='"+ origem +"']")).click();
+            combo.findElement(By.xpath("//option[.='" + origem + "']")).click();
         }
         {
             this.destino = destino;
             WebElement combo = driver.findElement(By.name("toPort"));
             combo.click();
-            combo.findElement(By.xpath("//option[.='"+ destino +"']")).click(); 
+            combo.findElement(By.xpath("//option[.='" + destino + "']")).click();
         }
     }
 
@@ -67,6 +67,7 @@ public class ComprarPassagemBDD {
 
     @Entao("visualiza a lista de voos")
     public void visualiza_a_lista_de_voos() {
-        assertEquals("Flights from " + origem + " to " + destino + ":", driver.findElement(By.cssSelector("h3")).getText());
+        assertEquals("Flights from " + origem + " to " + destino + ":",
+                driver.findElement(By.cssSelector("h3")).getText());
     }
 }

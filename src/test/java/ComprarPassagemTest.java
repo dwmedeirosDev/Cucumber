@@ -16,7 +16,6 @@ public class ComprarPassagemTest {
 
     // 2.1- Atributos
     private WebDriver driver; // Atributo do Selenium WebDriver
-    
 
     // 2.2- Métodos e funções
 

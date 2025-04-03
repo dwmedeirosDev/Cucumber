@@ -21,3 +21,19 @@ Lições aprendidas durante o curso Iterasys (142)
  mvn clean test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features="src/test/resources/features"
 
  mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dexec.argas="src/test/resources/ComprarPassagemBDD.feature --glue stepsPO"
+
+Projeto utilizando a abordagem Page Objects/ Page Factory
+- Pode usar ou não BDD (Behavior Driven Development)
+-> Foco na manutenção e reaproveitamento a longo prazo, útil para projetos com ciclo de vida de 
+   desenvolvimento de softwares longos (CVDS/SDLC)
+   
+-> Um teste vão ser vários arquivos: Um arquivo de mapeamento para cada página ou região da página (*Page.java),
+   um arquivo de base para tudo que há em comum nos mapeamentos
+
+-> O projeto terá arquivo de negócio escrito em Gherkin (.feature), arquivo de automação, que faz referêcia ao .feature (.java)
+   e ao mapeamento
+
+Por projeto:
+    * Arquivo de hooks (Before e After centralizados)
+    * Arquivo de runner (Executar o teste/maestro)
+    
