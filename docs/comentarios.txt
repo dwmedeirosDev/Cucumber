@@ -28,7 +28,8 @@ Projeto utilizando a abordagem Page Objects/ Page Factory
    desenvolvimento de softwares longos (CVDS/SDLC)
    
 -> Um teste vão ser vários arquivos: Um arquivo de mapeamento para cada página ou região da página (*Page.java),
-   um arquivo de base para tudo que há em comum nos mapeamentos
+   um arquivo chamado "commum" para tudo que há em comum nos mapeamentos, um arquivo chamado "base" para
+   definir o Selenium que irá ser compartilhado
 
 -> O projeto terá arquivo de negócio escrito em Gherkin (.feature), arquivo de automação, que faz referêcia ao .feature (.java)
    e ao mapeamento
@@ -36,4 +37,3 @@ Projeto utilizando a abordagem Page Objects/ Page Factory
 Por projeto:
     * Arquivo de hooks (Before e After centralizados)
     * Arquivo de runner (Executar o teste/maestro)
-    
