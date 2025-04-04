@@ -14,7 +14,7 @@ Funcionalidade: Comprar Passagem
 
   Esquema do Cenario: Comprar com sucesso - Data Driven
     Dado que acesso o site "https://blazedemo.com/"
-    Quando seleciono a origem <origem> e destino <destino>
+    Quando seleciono a <origem> e <destino>
     E clico no botao Find Flights
     Entao visualiza a lista de voos
 
