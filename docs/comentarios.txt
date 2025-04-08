@@ -1,0 +1,39 @@
+Lições aprendidas durante o curso Iterasys (142)
+ - Gravação e execução com Selenium IDE
+ - Adaptar a gravação com Selenium WebDriver
+ - Criar script do zero por programação
+ 
+ Obs: Para pequenos projetos, cada teste é um arquivo
+ 
+ Abordagens úteis em projetos com maiores vidas úteis:
+ 
+ Projeto utilizando a abordagem BDD (Behavior Driven Development)
+ - Significado: Desenvolvimento direcionado por comportamento
+ - Foco do BDD é a melhor comunicação entre o time
+ - Usar um plugin/framework chamado Cucumber // https://cucumber.io/
+ - Seguir a sintaxe Gherkin
+ 
+ - 1 Teste será composto por 2 arquivos: Arquivo de negócio escrito em Gherkin (.feature) e arquivo
+ de automação, que faz referêcia ao .feature (.java)
+
+
+ # códigos para execução:
+ mvn clean test -Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features="src/test/resources/features"
+
+ mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dexec.argas="src/test/resources/ComprarPassagemBDD.feature --glue stepsPO"
+
+Projeto utilizando a abordagem Page Objects/ Page Factory
+- Pode usar ou não BDD (Behavior Driven Development)
+-> Foco na manutenção e reaproveitamento a longo prazo, útil para projetos com ciclo de vida de 
+   desenvolvimento de softwares longos (CVDS/SDLC)
+   
+-> Um teste vão ser vários arquivos: Um arquivo de mapeamento para cada página ou região da página (*Page.java),
+   um arquivo chamado "commum" para tudo que há em comum nos mapeamentos, um arquivo chamado "base" para
+   definir o Selenium que irá ser compartilhado
+
+-> O projeto terá arquivo de negócio escrito em Gherkin (.feature), arquivo de automação, que faz referêcia ao .feature (.java)
+   e ao mapeamento
+
+Por projeto:
+    * Arquivo de hooks (Before e After centralizados)
+    * Arquivo de runner (Executar o teste/maestro)
